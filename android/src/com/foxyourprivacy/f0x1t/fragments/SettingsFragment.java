@@ -50,6 +50,7 @@ public class SettingsFragment extends ListFragment implements AdapterView.OnItem
                     getString(R.string.help),
                     getString(R.string.textsize),
                     getString(R.string.activate_usage_stats),
+                    getString(R.string.switch_notifications),
                     getString(R.string.Impressum),
                     getString(R.string.debugging),
                     getString(R.string.legalInfo)
@@ -59,6 +60,7 @@ public class SettingsFragment extends ListFragment implements AdapterView.OnItem
             profileListItems = new String[]{
                     getString(R.string.help),
                     getString(R.string.textsize),
+                    getString(R.string.switch_notifications),
                     getString(R.string.Impressum),
                     getString(R.string.debugging),
                     getString(R.string.legalInfo)
@@ -72,6 +74,7 @@ public class SettingsFragment extends ListFragment implements AdapterView.OnItem
         fragmentList.put(getString(R.string.Impressum), new LegalInformationFragment());
         fragmentList.put(getString(R.string.debugging), new CSVRefreshFragment());
         fragmentList.put(getString(R.string.legalInfo), new LegalInformationFragment_libGDX());
+        fragmentList.put(getString(R.string.switch_notifications), new NotificationSettingsFragment());
 
 
         context = getActivity().getApplicationContext();

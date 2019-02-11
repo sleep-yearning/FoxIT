@@ -49,6 +49,8 @@ public class ValueKeeper {
     private int acornCount = 0; //amount of acorn the player collected
     private int tokenCount = 0; //amount of token the player collected
 
+    private boolean notificationsWanted = true;
+
 
 
     private long timeOfLastServerAccess =0;
@@ -98,6 +100,10 @@ public class ValueKeeper {
 
         if(data.containsKey("timeOfLastServerAccess")){
             timeOfLastServerAccess=Long.valueOf(data.get("timeOfLastServerAccess"));
+        }
+
+        if (data.containsKey("notificationsWanted")) {
+            notificationsWanted = Boolean.valueOf(data.get("notificationsWanted"));
         }
 
 
@@ -192,9 +198,10 @@ public class ValueKeeper {
         values.put("dailyLessonsUnlocked", Integer.toString(dailyLessonsUnlocked));
         values.put("timeOfFirstStart", Long.toString(timeOfFirstStart));
         values.put("timeOfLastServerAccess",Long.toString(timeOfLastServerAccess));
+        values.put("notificationsWanted", Boolean.toString(notificationsWanted));
 
 
-        Log.d("ValueKeeper", "currentEval:" + Integer.toString(currentEvaluation));
+        //Log.d("ValueKeeper", "currentEval:" + Integer.toString(currentEvaluation));
         //ArrayList<String> deinstalledApps=new ArrayList<>();
 
 
@@ -459,6 +466,14 @@ public class ValueKeeper {
 
     public void setTimeOfNextServerAccess(long nextTime) {
         this.timeOfLastServerAccess = nextTime - 259200000;
+    }
+
+    boolean isNotificationsWanted() {
+        return notificationsWanted;
+    }
+
+    public void setNotificationsWanted(boolean notificationsWanted) {
+        this.notificationsWanted = notificationsWanted;
     }
 
 

@@ -212,13 +212,19 @@ public class ClassListActivity extends FoxITActivity implements AdapterView.OnIt
         super.onPause();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), Home.class);
+        startActivity(intent);
+    }
+
     /**
      * class to define the way the settings are displayed in the listView
      *
      * @author Tim
      */
     private class MyListAdapter_class extends ArrayAdapter<ClassObject> {
-        public MyListAdapter_class() {
+        MyListAdapter_class() {
             //here is defined what layout the listView uses for a single entry
             super(getApplicationContext(), R.layout.layout_settings, classObjectList);
 
@@ -265,5 +271,4 @@ public class ClassListActivity extends FoxITActivity implements AdapterView.OnIt
 
 
     }
-
 }

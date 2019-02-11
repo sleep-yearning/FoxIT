@@ -5,14 +5,12 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.foxyourprivacy.f0x1t.BackgroundService;
 import com.foxyourprivacy.f0x1t.FoxITApplication;
 import com.foxyourprivacy.f0x1t.R;
 import com.foxyourprivacy.f0x1t.ValueKeeper;
@@ -43,7 +41,7 @@ public abstract class FoxITActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onStart() { //TODO Activity which every Acitivity inherits does way too much in onStart!
+    public void onStart() { //TODO Activity which every Activity inherits does way too much in onStart!
         super.onStart();
 
         NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -54,8 +52,6 @@ public abstract class FoxITActivity extends AppCompatActivity {
         FoxITApplication myApp = (FoxITApplication) this.getApplication();
         if (v.getFreshlyStarted()) {
 
-            Intent mServiceIntent = new Intent(this, BackgroundService.class);
-            startService(mServiceIntent);
             v.reviveInstance(getApplicationContext());
 
             Calendar c = Calendar.getInstance();
@@ -93,10 +89,10 @@ public abstract class FoxITActivity extends AppCompatActivity {
         if (myApp.wasInBackground || v.getFreshlyStarted()) {
             Log.d("MyApp", "Was in Background");
             v.setFreshlyStarted(false);
-            v.setTimeOfLastAccess(System.currentTimeMillis());
+            v.setTimeOfLastAccess(Calendar.getInstance().getTimeInMillis());
         }
 
-        if (v.getTimeOfLastServerAccess() + 259200000 < System.currentTimeMillis() && v.getTimeOfLastServerAccess() != 0L) {
+        if (v.getTimeOfLastServerAccess() + 259200000 < Calendar.getInstance().getTimeInMillis() && v.getTimeOfLastServerAccess() != 0L) {
             NetworkInfo netInfo = ((ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
             if (netInfo != null && netInfo.isConnected()) {
                 new CSVUpdateTask().execute(this, "https://foxit.secuso.org/CSVs/raw/permissions.csv", "permissions");

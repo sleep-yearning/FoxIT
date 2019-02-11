@@ -58,27 +58,29 @@ public class LessonActivity extends FoxITActivity {
         String[] slideStringArray = lesson.getSlides().split("_slide_;");
         className = getIntent().getStringExtra("classname");
 
-
+        int textsize = R.dimen.text_normal;
         DBHandler dbHandler = new DBHandler(this);
-        int textchoice = Integer.valueOf(dbHandler.getIndividualValue("textsize"));
-        int textsize = 3;
-        switch (textchoice) {
-            case R.id.textsizesmall:
-                textsize = R.dimen.text_small;
-                break;
-            case R.id.textsizesmaller:
-                textsize = R.dimen.text_smaller;
-                break;
-            case R.id.textsizenormal:
-                textsize = R.dimen.text_normal;
-                break;
-            case R.id.textsizebigger:
-                textsize = R.dimen.text_bigger;
-                break;
-            case R.id.textsizebig:
-                textsize = R.dimen.text_big;
-                break;
+        if (!dbHandler.getIndividualValue("textsize").equals("notfound")) {
+            int textchoice = Integer.valueOf(dbHandler.getIndividualValue("textsize"));
+            switch (textchoice) {
+                case R.id.textsizesmall:
+                    textsize = R.dimen.text_small;
+                    break;
+                case R.id.textsizesmaller:
+                    textsize = R.dimen.text_smaller;
+                    break;
+                case R.id.textsizenormal:
+                    textsize = R.dimen.text_normal;
+                    break;
+                case R.id.textsizebigger:
+                    textsize = R.dimen.text_bigger;
+                    break;
+                case R.id.textsizebig:
+                    textsize = R.dimen.text_big;
+                    break;
+            }
         }
+
 
 
 
@@ -367,7 +369,7 @@ public class LessonActivity extends FoxITActivity {
         layout.setEnabled(true);
 
         ValueKeeper v = ValueKeeper.getInstance();
-        Boolean isEval = false;
+        boolean isEval = false;
         if (lesson.getLessonName().contains("EVALUATION")) {
             isEval = true;
             String switc = lesson.getLessonName().substring(0, lesson.getLessonName().indexOf("EVALUATION"));
@@ -444,7 +446,7 @@ public class LessonActivity extends FoxITActivity {
 
     public void addEvaluationResult(String question, String answer) {
 
-        String prefix = lesson.getLessonName().substring(lesson.getLessonName().indexOf(":") + 1, lesson.getLessonName().length());
+        String prefix = lesson.getLessonName().substring(lesson.getLessonName().indexOf(":") + 1);
         evaluationResults.put(prefix + ":" + question, answer);
 
     }

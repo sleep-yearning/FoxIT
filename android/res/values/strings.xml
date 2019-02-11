@@ -161,5 +161,8 @@
     <string name="activate_usage_stats">App Statistiken (de)aktivieren</string>
     <string name="open_settings">Einstellungen öffnen</string>
     <string name="usage_stats_explanation">Um die Nutzungszeiten (= Zeit im Vordergrund) deiner Apps zu sehen, benötigt FoxIT eine spezielle Berechtigung. Dieser Button führt direkt zur entsprechenden Einstellung zum (de)aktivieren.</string>
+    <string name="switch_notifications">Benachrichtigungen (de)aktivieren</string>
+    <string name="unlocked_lesson">\"neue Lektion freigeschaltet\"</string>
+    <string name="notification_channel_id">f0x1t</string>
 
 </resources>

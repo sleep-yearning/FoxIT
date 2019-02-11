@@ -867,7 +867,7 @@ public class DBHandler extends SQLiteOpenHelper {
             db.execSQL("UPDATE " + TABLE_LESSONS + " SET " + COLUMN_STATUS + " = 1 WHERE " + COLUMN_LESSONNAME + " = \'" + escapeQuote(name) + "\';");
             return name;
         }
-        return "There is no new Lession";
+        return "There is no new lesson.";
     }
 
 
