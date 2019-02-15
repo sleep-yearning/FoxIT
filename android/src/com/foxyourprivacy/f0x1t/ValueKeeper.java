@@ -468,7 +468,7 @@ public class ValueKeeper {
         this.timeOfLastServerAccess = nextTime - 259200000;
     }
 
-    boolean isNotificationsWanted() {
+    public boolean isNotificationsWanted() {
         return notificationsWanted;
     }
 

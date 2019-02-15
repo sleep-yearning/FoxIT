@@ -14,7 +14,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
         android:gravity="center"
-        android:text="hiermit die nächste Lektion freischalten"
+        android:text="tägliche Lektionen freischalten."
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
@@ -26,6 +26,32 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="freischalten" />
+
+    <RadioGroup
+        android:id="@+id/notification_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_switch_notifications"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/notifications_on"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:text="@string/on" />
+
+        <RadioButton
+            android:id="@+id/notifications_off"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:text="@string/off" />
+
+    </RadioGroup>
 
 
 </RelativeLayout>

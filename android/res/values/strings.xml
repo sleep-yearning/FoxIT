@@ -164,5 +164,7 @@
     <string name="switch_notifications">Benachrichtigungen (de)aktivieren</string>
     <string name="unlocked_lesson">\"neue Lektion freigeschaltet\"</string>
     <string name="notification_channel_id">f0x1t</string>
+    <string name="on">an</string>
+    <string name="off">aus</string>
 
 </resources>

@@ -32,7 +32,7 @@ import java.util.TimeZone;
 public class DBHandler extends SQLiteOpenHelper {
 
     public static final String TABLE_USERDATA = "userdata";
-    public static final String COLUMN_KEY = "key";
+    public static final String COLUMN_KEY = "lookup";
     //column-names
     public static final String COLUMN_APPNAME = "name";
     public static final String COLUMN_PERMISSIONS = "permissions";
@@ -44,7 +44,7 @@ public class DBHandler extends SQLiteOpenHelper {
     //file-name
     private static final String DB_NAME = "rawdata.db";
     //DB-Version is updated, when changes in structur apply
-    private static final int DB_VERSION = 32;
+    private static final int DB_VERSION = 33;
     //table-names
     private static final String TABLE_APPS = "apps";
     private static final String TABLE_LESSONS = "lessons";
@@ -172,10 +172,10 @@ public class DBHandler extends SQLiteOpenHelper {
         Cursor count = db.rawQuery("SELECT COUNT(*) AS count FROM " + TABLE_SETTINGS + ";", null);
         count.moveToFirst();
         //output for the user, information of existing entries
-        Log.d("DBHandler", "Rawdata hat einträge: " + count.getInt(0));
+        //Log.d("DBHandler", "Rawdata hat einträge: " + count.getInt(0));
         count.close();
         //Here should an output for the user happen instead of the Log but with similiar values
-        Log.d("DBHandler", "PARAM-Column Länge von values:" + values.length);
+        //Log.d("DBHandler", "PARAM-Column Länge von values:" + values.length);
 
         int i = 0;
         //constructing a name for the new column
@@ -196,7 +196,7 @@ public class DBHandler extends SQLiteOpenHelper {
         renameEmptySettings();
 
         //output for user please
-        Log.d("DBHandler", "Rawdata eingefügt: " + i);
+        //Log.d("DBHandler", "Rawdata eingefügt: " + i);
         db.close();
 
     }
@@ -213,12 +213,12 @@ public class DBHandler extends SQLiteOpenHelper {
         Cursor count = db.rawQuery("SELECT COUNT(*) AS count FROM " + TABLE_APPS + ";", null);
         count.moveToFirst();
         //output for User here
-        Log.d("DBHandler", "APP-Column Länge von values:" + values.length);
+        //Log.d("DBHandler", "APP-Column Länge von values:" + values.length);
         int i = 0;
         //if there are entries in the table
         if (count.getInt(0) > 0) {
             //output for User here
-            Log.d("DBHandler", "Apps hat einträge");
+            //Log.d("DBHandler", "Apps hat einträge");
             count.close();
             //creating the name for the new column
             SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss", Locale.GERMANY);
@@ -235,7 +235,7 @@ public class DBHandler extends SQLiteOpenHelper {
             }
         } else {
             //output for User here
-            Log.d("DBHandler", "Apps hat keine Einträge");
+            //Log.d("DBHandler", "Apps hat keine Einträge");
             count.close();
             //inserting all the Apps with their values into the table
             for (ContentValues value : values
@@ -247,7 +247,7 @@ public class DBHandler extends SQLiteOpenHelper {
             }
         }
         //output for User here
-        Log.d("DBHandler", "Apps eingefügt: " + i + 1);
+        //Log.d("DBHandler", "Apps eingefügt: " + i + 1);
         db.close();
 
     }
@@ -368,7 +368,7 @@ public class DBHandler extends SQLiteOpenHelper {
         for (String[] lessonArray : theLessions) {
             try{
                 String slidearray = createSlidesString(lessonArray).replace("'", "''");
-                Log.d("DBHANDLER", slidearray);
+                //Log.d("DBHANDLER", slidearray);
                 if (checkIfInside(db, TABLE_LESSONS, COLUMN_LESSONNAME + " = \'" + escapeQuote(lessonArray[1]) + "\' AND " + COLUMN_CLASS + "= \'" + escapeQuote(lessonArray[0]) + "\'")) {
                     db.execSQL("UPDATE " + TABLE_LESSONS + " SET " + COLUMN_SLIDES + " = \'" + slidearray + "\', " + COLUMN_CLASS + " = \'" + escapeQuote(lessonArray[0]) + "\', " +
                             "\'" + COLUMN_DELAY + "\' = \'" + lessonArray[3] + "\', \'" + COLUMN_LESSONTYPE + "\' = \'" + lessonArray[2] + "\', \'" + COLUMN_EICHELN + "\' = \'" + lessonArray[4] +
@@ -382,10 +382,10 @@ public class DBHandler extends SQLiteOpenHelper {
                 else if (lessonArray.length == 1)
                     Log.e("DBHandler", "Fehler in Lektion: " + lessonArray[0]);
                 else
-                    Log.e("DBHandler", "Fehler in Lektion, Länge des lessionArrays: " + lessonArray.length);
+                    Log.e("DBHandler", "Fehler in Lektion, Länge des lessonArrays: " + lessonArray.length);
                 ioobe.printStackTrace();
             } catch (SQLiteException sqle) {
-                Log.d("DBH.updateLessons", "There was an SQLiteExcption. Please review escaping of relevant fields. Lession was: " + lessonArray[1] + " in Class " + lessonArray[0]);
+                Log.d("DBH.updateLessons", "There was an SQLiteException. Please review escaping of relevant fields. Lesson was: " + lessonArray[1] + " in Class " + lessonArray[0]);
                 sqle.printStackTrace();
             }
         }
@@ -747,12 +747,12 @@ public class DBHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 String name = cursor.getString(0).replace(".", " ");
-                Log.d("renameEmptySettings", "name from cursor and . " + name);
+                //Log.d("renameEmptySettings", "name from cursor and . " + name);
                 name = escapeQuote(name.replace("_", " "));
-                Log.d("renameEmptySettings", "name ' and _ " + name);
+                //Log.d("renameEmptySettings", "name ' and _ " + name);
 
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
-                Log.d("renameEmptySettings", "name substring " + name);
+                //Log.d("renameEmptySettings", "name substring " + name);
 
                 db.execSQL("UPDATE " + TABLE_SETTINGS + " SET " + COLUMN_GOODNAME + " = \'" + name + "\' WHERE " + COLUMN_SETTING + " = \'" + escapeQuote(cursor.getString(0)) + "\';");
                 cursor.moveToNext();
@@ -872,7 +872,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     public void exportDB() {
-        Log.d("DBHandler", "exporting DB");
+        //Log.d("DBHandler", "exporting DB");
         String user = ValueKeeper.getInstance().getUsername();
         String timestamp = String.valueOf(System.currentTimeMillis());
         File stordir = Environment.getExternalStorageDirectory();
