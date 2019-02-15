@@ -96,7 +96,7 @@ public abstract class FoxITActivity extends AppCompatActivity {
             NetworkInfo netInfo = ((ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
             if (netInfo != null && netInfo.isConnected()) {
                 new CSVUpdateTask().execute(this, "https://foxit.secuso.org/CSVs/raw/permissions.csv", "permissions");
-                new CSVUpdateTask().execute(this, "https://foxit.secuso.org/CSVs/raw/testcsv.csv", "lessons");
+                new CSVUpdateTask().execute(this, "https://foxit.secuso.org/CSVs/raw/lektionen.csv", "lessons");
                 new CSVUpdateTask().execute(this, "https://foxit.secuso.org/CSVs/raw/classes.csv", "classes");
                 new CSVUpdateTask().execute(this, "https://foxit.secuso.org/CSVs/raw/sdescription.csv", "settings");
                 v.setTimeOfThisServerAccess();

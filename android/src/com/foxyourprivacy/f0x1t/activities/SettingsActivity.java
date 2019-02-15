@@ -142,7 +142,7 @@ public class SettingsActivity extends FoxITActivity {
         if (netInfo != null && netInfo.isConnected()) {
             //update from internet resource
             String URL = "https://foxit.secuso.org/CSVs/raw/lektionen.csv";//"https://app.seafile.de/f/e27034ec0a/?raw=1";
-            new CSVUpdateTask().execute(context, URL, "lessons", readLessonCSV(R.raw.testcsv, context));
+            new CSVUpdateTask().execute(context, URL, "lessons", readLessonCSV(R.raw.lektionen, context));
             URL = "https://foxit.secuso.org/CSVs/raw/classes.csv";//"https://app.seafile.de/f/7ca81fac4e/?raw=1";
             new CSVUpdateTask().execute(context, URL, "classes", readCSV(R.raw.classes, context));
 
@@ -150,7 +150,7 @@ public class SettingsActivity extends FoxITActivity {
             //fallback on local data provided by apk
             Log.d("SettingsActivity: ", "no internet connection");
             //DBHandler dbHandler = new DBHandler(context, null, null, 1);
-            new DBWrite().execute(context, "updateLessons", readLessonCSV(R.raw.testcsv, context));
+            new DBWrite().execute(context, "updateLessons", readLessonCSV(R.raw.lektionen, context));
             //dbHandler.updateLessons(readCSV(R.raw.lektionen, context));
             new DBWrite().execute(context, "updateClasses", readCSV(R.raw.classes, context));
             //dbHandler.updateClasses(readCSV(R.raw.classes, context));
