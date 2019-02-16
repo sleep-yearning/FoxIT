@@ -212,11 +212,6 @@ public class ClassListActivity extends FoxITActivity implements AdapterView.OnIt
         super.onPause();
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(getApplicationContext(), Home.class);
-        startActivity(intent);
-    }
 
     /**
      * class to define the way the settings are displayed in the listView

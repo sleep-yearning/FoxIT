@@ -11,8 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 
-import com.foxyourprivacy.f0x1t.activities.ClassListActivity;
-import com.foxyourprivacy.f0x1t.activities.Home;
+import com.foxyourprivacy.f0x1t.activities.LessonListActivity;
 
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
@@ -35,35 +34,39 @@ public class unlockWorker extends Worker {
 
         if (v.isNotificationsWanted()) {
             createNotificationChannel();
-            NotificationCompat.Builder mBuilder =
+            NotificationCompat.Builder nBuilder =
                     new NotificationCompat.Builder(getApplicationContext(), getApplicationContext().getString(R.string.notification_channel_id))
                             .setSmallIcon(R.mipmap.literature)
                             .setContentTitle(getApplicationContext().getString(R.string.newLessonAvailable))
                             .setContentText(lessonName);
 
-            Intent resultIntent = new Intent(getApplicationContext(), ClassListActivity.class);
+            Intent resultIntent = new Intent(getApplicationContext(), LessonListActivity.class);
+            ClassObject co = db.getSingleClass("Daily Lessons");
+
+            resultIntent.putExtra("description", co.getDescriptionText());
+            resultIntent.putExtra("name", co.getName());
+            resultIntent.putExtra("icon", R.mipmap.class_daily);
+
 
             // The stack builder object will contain an artificial back stack for the
             // started Activity.
             // This ensures that navigating backward from the Activity leads out of
             // your application to the Home screen.
             TaskStackBuilder stackBuilder = TaskStackBuilder.create(getApplicationContext());
-            // Adds the back stack for the Intent (but not the Intent itself)
-            stackBuilder.addParentStack(Home.class);
-            // Adds the Intent that starts the Activity to the top of the stack
-            stackBuilder.addNextIntent(resultIntent);
+            // Adds the Intent that starts the Activity to the top of the stack with its (in manifest) specified parent
+            stackBuilder.addNextIntentWithParentStack(resultIntent);
             PendingIntent resultPendingIntent =
                     stackBuilder.getPendingIntent(
                             0,
-                            PendingIntent.FLAG_UPDATE_CURRENT
-                    );
-            mBuilder.setContentIntent(resultPendingIntent);
+                            PendingIntent.FLAG_UPDATE_CURRENT);
 
+            nBuilder.setContentIntent(resultPendingIntent);
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
-            notificationManager.notify(1, mBuilder.build());
+            notificationManager.notify(1, nBuilder.build());
 
 
         }
+        db.close();
 
         return Result.success();
 

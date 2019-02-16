@@ -443,6 +443,18 @@ public class DBHandler extends SQLiteOpenHelper {
         return result;
     }
 
+    public ClassObject getSingleClass(String name) {
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CLASSES + " WHERE " + COLUMN_CLASSNAME + " = \'" + escapeQuote(name) + "\';", null);
+        cursor.moveToFirst();
+        ClassObject result = new ClassObject(cursor.getString(cursor.getColumnIndex(COLUMN_CLASSNAME)),
+                cursor.getString(cursor.getColumnIndex(COLUMN_CLASSDESCRIPTION)), cursor.getInt(cursor.getColumnIndex(COLUMN_CLASSPOSITION)));
+        cursor.close();
+        db.close();
+        return result;
+
+    }
+
     public String getNumberOfSolvedLessons(String className) {
         SQLiteDatabase db = getWritableDatabase();
         Cursor unlocked = db.rawQuery("SELECT COUNT(*) AS count FROM " + TABLE_LESSONS + " WHERE "
@@ -597,7 +609,7 @@ public class DBHandler extends SQLiteOpenHelper {
      *
      * @param permissionname permissionidentifier
      * @return level as integer
-     * @author
+     * @author noah
      */
     int getPermissionLevel(String permissionname) {
         SQLiteDatabase db = getWritableDatabase();

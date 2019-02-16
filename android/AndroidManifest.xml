@@ -31,29 +31,35 @@
         <activity
             android:name=".activities.Analysis"
             android:screenOrientation="portrait"
+            android:parentActivityName=".activities.Home"
             android:theme="@style/AppThemeWhite" />
         <activity
             android:name=".activities.AnalysisResults"
             android:label="Analyse-Ergebnisse"
             android:screenOrientation="portrait"
+            android:parentActivityName=".activities.Home"
             android:theme="@style/AppThemeWhite" />
         <activity
             android:name=".activities.LessonActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"
+            android:parentActivityName=".activities.LessonListActivity"
             android:theme="@style/AppThemeNoBackground" />
         <activity
             android:name=".activities.LessonListActivity"
             android:screenOrientation="portrait"
+            android:parentActivityName=".activities.ClassListActivity"
             android:theme="@style/AppThemeWhite" />
         <activity
             android:name=".activities.ClassListActivity"
             android:label="Die Kurse"
+            android:parentActivityName=".activities.Home"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWhite" />
         <activity
             android:name=".activities.TrophyRoomActivity"
             android:label="Deine Erfolge und Animationen"
+            android:parentActivityName=".activities.Home"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoBackground" />
         <activity
@@ -64,13 +70,14 @@
         <activity
             android:name=".activities.AnimationLauncher"
             android:label="Lass uns spielen!"
+            android:parentActivityName=".activities.Home"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoBackground" />
         <activity
             android:name=".activities.SettingsActivity"
+            android:parentActivityName=".activities.Home"
             android:label="Einstellungen"
             android:screenOrientation="portrait"
-
             android:theme="@style/AppThemeNoBackground" />
 
     </application>
