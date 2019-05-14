@@ -5,7 +5,7 @@
     <!-- specifies the menu button -->
 
     <item
-        android:id="@+id/analyze"
+        android:id="@+id/settings"
         android:icon="@drawable/redo"
         android:title="@string/menu"
         android:visible="true"

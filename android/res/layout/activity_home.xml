@@ -28,7 +28,6 @@
             android:layout_height="match_parent"
             android:layout_alignBottom="@+id/fourthView"
             android:layout_margin="8dp"
-            android:layout_toStartOf="@+id/secondView"
             android:background="@color/white"
             android:elevation="2dp"
             android:orientation="vertical"
@@ -61,81 +60,6 @@
         </RelativeLayout>
 
         <View
-            android:id="@+id/secondView"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true" />
-
-        <RelativeLayout
-            android:id="@+id/thirdLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignBottom="@+id/fourthView"
-            android:layout_margin="8dp"
-            android:layout_toEndOf="@+id/secondView"
-            android:background="@color/white"
-            android:elevation="2dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="80dp"
-                android:text="@string/fox"
-                android:textAlignment="center"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="25dp" />
-
-            <ImageView
-                android:id="@+id/gamingIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView2"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="25dp"
-                android:contentDescription="@string/fox"
-                android:src="@drawable/paw" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/fifthLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignEnd="@+id/secondView"
-            android:layout_below="@+id/fourthView"
-            android:layout_margin="8dp"
-            android:background="@color/white"
-            android:elevation="2dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="80dp"
-                android:text="@string/achievements"
-                android:textAlignment="center"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="25dp" />
-
-            <ImageView
-                android:id="@+id/trophyIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView3"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="25dp"
-                android:contentDescription="@string/achievements"
-                android:src="@mipmap/trophy_2"/>
-        </RelativeLayout>
-
-        <View
             android:id="@+id/fourthView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -148,7 +72,6 @@
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/fourthView"
             android:layout_margin="8dp"
-            android:layout_toEndOf="@+id/secondView"
             android:background="@color/white"
             android:elevation="2dp"
             android:orientation="vertical">
@@ -160,7 +83,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="80dp"
-                android:text="@string/settings"
+                android:text="@string/analysisResults"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="25dp" />

@@ -6,7 +6,7 @@
     android:layout_alignParentStart="true"
     android:layout_alignParentTop="true"
     android:background="@color/creme"
-    tools:context="com.foxyourprivacy.f0x1t.activities.OnboardingActivity">
+    tools:context="com.foxyourprivacy.privacyRiskInfo.activities.OnboardingActivity">
 
 
         <ImageView

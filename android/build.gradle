@@ -21,9 +21,9 @@ android {
         androidTest.setRoot('tests')
     }
     defaultConfig {
-        versionCode 13
-        versionName "1.5"
-        applicationId "com.foxyourprivacy.f0x1t"
+        versionCode 1
+        versionName "1.0"
+        applicationId "com.foxyourprivacy.privacyRiskInfo"
         minSdkVersion 17
         targetSdkVersion 27
     }

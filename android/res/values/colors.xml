@@ -7,8 +7,5 @@
     <color name="white">#ffffff</color>
     <color name="rightAnswer">#aadbe487</color>
     <color name="wrongAnswer">#aaf75b5b</color>
-    <color name="yellow_animation">#bafafc58</color>
     <color name="trophyBack">#f5d64b</color>
-    <color name="unlockedItem">#4ff908</color>
-    <color name="popup">#ffed75</color>
 </resources>
