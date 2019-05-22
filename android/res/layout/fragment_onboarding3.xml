@@ -13,8 +13,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="107dp"
-        android:contentDescription="@string/paw"
-            android:src="@drawable/paw" />
+        android:contentDescription="@string/phonescan"
+        android:src="@drawable/smartphonecolor" />
 
         <ImageView
             android:id="@+id/imageView2"

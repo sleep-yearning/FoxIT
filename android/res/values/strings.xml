@@ -24,20 +24,20 @@
     <string name="apacheFoundation">https://www.apache.org/foundation/</string>
     <string name="foxITlogo">FoxIT-Logo</string>
     <string name="onboardigProgress1">4-Punkte-Fortschritt</string>
-    <string name="onboarding1text1">Willkommen bei FoxIT!</string>
+    <string name="onboarding1text1">Willkommen bei Privacy Risk Info!</string>
     <string name="onboarding1text2">Wir helfen dir, deine Privatsphäre im Alltag zu schützen. Lege gleich los und erfahre mehr!</string>
     <string name="academicHat">Akademischer Hut</string>
     <string name="onboardigProgress2">2. von 4 Punkten</string>
     <string name="onboarding2text1">Erweitere deinen Horizont!</string>
-    <string name="onboarding2text2">Verschaffe dir Wissen zum Thema Privatsphäre! Lerne mit unseren Lektionen wie du versteckte Berechtigungen findest, wie du anonym bleiben kannst und vieles mehr!</string>
-    <string name="paw">Tatze</string>
+    <string name="onboarding2text2">Verschaffe dir Wissen zum Thema Privatsphäre! Lerne mit den Lektionen wie du versteckte Berechtigungen findest, wie du anonym bleiben kannst und vieles mehr!</string>
+    <string name="phonescan">Phonescan</string>
     <string name="onboardigProgress3">3. von 4 Punkten</string>
-    <string name="onboarding3text1">Lass den Fuchs schnüffeln!</string>
-    <string name="onboarding3text2">Erspiele Punkte in den Lektionen, setzte sie ein, und mach\' deinen Fuchs zum Privatsphären-Schnüffler!</string>
+    <string name="onboarding3text1">Scanne dein Smartphone</string>
+    <string name="onboarding3text2">Erfahre alles über die aktuellen Einstellungen und Berechtigungen der Apps, die du gerade verwendest!</string>
     <string name="profileSymbol">Profil-Symbol</string>
     <string name="onboardigProgress4">4. von 4 Punkten</string>
-    <string name="onboarding4text1">Scanne dein Smartphone</string>
-    <string name="onboarding4text2">Erfahre alles über die aktuellen Einstellungen und Berechtigungen der Apps, die du gerade verwendest!</string>
+    <string name="onboarding4text1">Erkenne dein Nutzungsverhalten!</string>
+    <string name="onboarding4text2">Optional kannst du dir die Zeit anzeigen lassen, die deine Apps im Vordergrund verbracht haben.</string>
     <string name="letsgo">Los geht\'s!</string>
     <string name="permissionName" />
     <string name="animalSymbol">Tier-Logo</string>
@@ -68,7 +68,7 @@
     <string name="harmlessPermissions">Harmlose Berechtigungen:</string>
     <string name="normalPermissions">Normale Berechtigungen:</string>
     <string name="dangerousPermissions">Gefährliche Berechtigungen:</string>
-    <string name="impressum">Impressum \n\nDiese App ist im Rahmen der Veranstaltung „Bachelorpraktikum“ an der TU Darmstadt am Fachbereich Informatik entstanden.\n\nDas Projekt entstand im Auftrag von: Projektgruppe MoPPa Department of Computer Science SECUSO - Security, Usability and Society Institut für Psychologie Fachbereich Humanwissenschaften Technische Universität Darmstadt \n\nVerantwortlich für alle Inhalte und Software ist das Team FoxIT: \nHannah Drews \nElisa Kirchner \nTim René Schmidt \nNoah Schlegel \nLena Scholz \nfoxit@psychologie.tu-darmstadt.de\n\nQuellen der Bilder \nDeep Web:\nhttps://www.deepdotweb.com/wp-content/uploads/2015/06/deep-web-300x1971.jpg\nPasswörter:\nhttp://www.hilfe-im-netz.com/wp-content/uploads/2013/09/gmx-passwort-vergessen.jpg\nhttp://www.puravidamultimedia.com/wp-content/uploads/2014/04/funny-password-meme-6.jpg\nhttp://www.wordstream.com/images/difficult-captcha.jpg\nFacebook:\nhttps://de.toonpool.com/user/65/files/datenschutz_2076665.jpg\nDie Gesellschaft:\nhttps://upload.wikimedia.org/wikipedia/commons/a/ac/Presidio-modelo2.JPG\nMessaging-Apps:\nhttps://lh3.googleusercontent.com/tfY9-PhmOZXzuVL-mOYtqIWqlevIJSei829aGlzIBHZFdmFAiKOCqR-bDWSLCkEn3bSd=w300\nhttps://lh5.ggpht.com/jKZCC5NR0uU01scYefDjUICueE59pEpamDz3J3LDAg3X-6DupmpsDysbFUc8WUFDgfk=w300\nhttps://lh3.googleusercontent.com/jVXglyWWL5J2y1vRN-7Jy3_ozvvZc4w5486IAkbAIrWcNN_vn7YuIvhc1JDtGq43BqGl=w300\nhttps://lh3.googleusercontent.com/gcw6-BzPp0HX3lSFwlsBOZ5ZKKkBXAzPRtco7aAYqe0gLK3jrWy_kCZ9uvN2zQLSoV8=w300\n\nIcons:\nFuchs:\nIcons made by http://www.flaticon.com/authors/pixel-perfect from www.flaticon.com\nWildschwein:\nIcons made by http://www.freepik.com from www.flaticon.com\nUhr:\nIcons made by http://www.flaticon.com/authors/roundicons from www.flaticon.com\nSchild, Eule, Vogel, Rackete, Hammer, Briefkasten, Mond, Buch:\nhttps://icons8.com/\nZwiebel:\nIcons made by http://www.freepik.com from www.flaticon.com\nFacebook:\nIcons made by www.freepik.com from www.flaticon.com \nGoogle:\nIcons made http://www.freepik.com from www.flaticon.com \nLeuchturm:\nIcons made by http://www.flaticon.com/authors/vectors-market from www.flaticon.com\nSchlüssel:\nIcons made by http://www.flaticon.com/authors/madebyoliver from www.flaticon.com\nBrief:\nIcons made by http://www.flaticon.com/authors/pixel-buddha from www.flaticon.com\nAnalysis:\nIcons made by Freepik from Flaticon is licensed by CC 3.0 BY\nWiederholen: Icons made by https://www.flaticon.com/authors/simpleicon  from www.flaticon.com is licensed by Creative Commons BY 3.0\n\nKopfschütteln, das Händeschütteln der Einzelgänger.\n</string>
+    <string name="impressum">Impressum \n\nDiese App wurde für Forschungszwecke und Aufklärung am Karlsruhe Institute of Technology entwickelt und basiert auf der an der TU Darmstadt am Fachbereich Informatik entstandenen App FoxIT.\n\nDas Projekt entstand im Auftrag von SECUSO - Security, Usability and Society.\nFragen und Anregungen bitte an: noah.schlegel@secuso.org\n\nQuellen der Bilder \nDeep Web:\nhttps://www.deepdotweb.com/wp-content/uploads/2015/06/deep-web-300x1971.jpg\nPasswörter:\nhttp://www.hilfe-im-netz.com/wp-content/uploads/2013/09/gmx-passwort-vergessen.jpg\nhttp://www.puravidamultimedia.com/wp-content/uploads/2014/04/funny-password-meme-6.jpg\nhttp://www.wordstream.com/images/difficult-captcha.jpg\nFacebook:\nhttps://de.toonpool.com/user/65/files/datenschutz_2076665.jpg\nDie Gesellschaft:\nhttps://upload.wikimedia.org/wikipedia/commons/a/ac/Presidio-modelo2.JPG\nMessaging-Apps:\nhttps://lh3.googleusercontent.com/tfY9-PhmOZXzuVL-mOYtqIWqlevIJSei829aGlzIBHZFdmFAiKOCqR-bDWSLCkEn3bSd=w300\nhttps://lh5.ggpht.com/jKZCC5NR0uU01scYefDjUICueE59pEpamDz3J3LDAg3X-6DupmpsDysbFUc8WUFDgfk=w300\nhttps://lh3.googleusercontent.com/jVXglyWWL5J2y1vRN-7Jy3_ozvvZc4w5486IAkbAIrWcNN_vn7YuIvhc1JDtGq43BqGl=w300\nhttps://lh3.googleusercontent.com/gcw6-BzPp0HX3lSFwlsBOZ5ZKKkBXAzPRtco7aAYqe0gLK3jrWy_kCZ9uvN2zQLSoV8=w300\n\nIcons:\nHut: https://www.shareicon.net/education-study-student-95116\ Hammer, Briefkasten, Mond, Buch:\nhttps://icons8.com/\nZwiebel:\nIcons made by http://www.freepik.com from www.flaticon.com\nFacebook:\nIcons made by www.freepik.com from www.flaticon.com \nGoogle:\nIcons made http://www.freepik.com from www.flaticon.com \nLeuchturm:\nIcons made by http://www.flaticon.com/authors/vectors-market from www.flaticon.com\nSchlüssel:\nIcons made by http://www.flaticon.com/authors/madebyoliver from www.flaticon.com\nBrief:\nIcons made by http://www.flaticon.com/authors/pixel-buddha from www.flaticon.com\nAnalysis:\nIcons made by Freepik from Flaticon is licensed by CC 3.0 BY\nWiederholen: Icons made by https://www.flaticon.com/authors/simpleicon  from www.flaticon.com is licensed by Creative Commons BY 3.0\n\nKopfschütteln, das Händeschütteln der Einzelgänger.\n</string>
     <string name="reAnalyse">Analyse wiederholen</string>
     <string name="personalData">Persönliche Daten</string>
     <string name="help">Hilfe</string>
@@ -77,20 +77,16 @@
     <string name="legalInfo">Rechtliche Informationen</string>
     <string name="faqq1">Wo kann ich Wünsche oder Verbesserungsvorschläge abgeben?;</string>
     <string name="faqa1">Du kannst uns gerne unter noah.schlegel@secuso.org kontaktieren! Wir helfen gerne und sind für alle Anmerkungen dankbar!</string>
-    <string name="faqq2">Warum ein Fuchs?;</string>
-    <string name="faqa2">Füchse stehen für Intelligenz und Klugheit. Außerdem sind sie neugierig und schnüffeln viel herum. Auch wir buddeln uns durch Einstellungen und Funktionen und machen dich so mit dem Thema Datensicherheit vertraut.</string>
     <string name="faqq3">Was bringen mir die Einstellungs-und App-Listen?;</string>
     <string name="faqa3">Im Großen und Ganzen spiegelt sich hier deine Privatsphäre am Smartphone wider. Gut erklärt wird dies im Kurs “Erstes Tapsen”.</string>
     <string name="faqq4">Was bedeutet Privacy Paradox?;</string>
     <string name="faqa4">Das Privacy Paradox beschreibt den Zwiespalt zwischen dem Wunsch nach Privatsphäre und der sozialen Entfaltung sowie praktischem Nutzen.</string>
-    <string name="faqq5">Was sind Trophäen?;</string>
-    <string name="faqa5">Trophäen sind kleine Aufmerksamkeiten die du dafür erhälst, wie du die App nutzt. Sie schalten sich automatisch frei, wenn du bestimmte Check-Points erreicht hast.</string>
     <string name="faqq6">Wieso kann ich nicht alle Lektionen sofort bearbeiten?;</string>
     <string name="faqa6">Um den Einstieg übersichtlicher zu machen, sind nur in einigen Kursen die ersten Lektionen freigeschaltet. Falsch bearbeitete Quizze werden für einen bestimmten Zeitraum gesperrt, damit du noch einmal in Ruhe über alle Fragen nachdenken kannst. :)</string>
     <string name="faqq7">Wie funktioniert das Punktesystem?;</string>
-    <string name="faqa7">Für vollständig und richtig bearbeitete Lektionen bekommst du Eicheln und Pilze. Eicheln kannst du dafür verwenden, neue Animationen für den Fuchs freizuschalten. Mit Pilzen kannst du gesperrte Lektionen freischalten.</string>
+    <string name="faqa7">Für vollständig und richtig bearbeitete Lektionen bekommst du Pilze. Mit diesen kannst du neue gesperrte Lektionen freischalten.</string>
     <string name="faqq8">Ich habe Probleme mit der App, was soll ich tun?;</string>
-    <string name="faqa8">Da unsere App ein Prototyp ist und es sicherlich noch viele unentdeckte Fehler gibt, erstmal Ruhe bewaren. In diesem Fall kontaktiere uns am Besten über foxit@psychologie.tu-darmstadt.de!</string>
+    <string name="faqa8">Da es sicherlich noch einige unentdeckte Fehler gibt, erstmal Ruhe bewaren. In diesem Fall kontaktiere uns am Besten über noah.schlegel@secuso.org!</string>
     <string name="progressApps">Apps analysieren...</string>
     <string name="menu">Menü</string>
     <string name="textsize">Textgröße</string>
@@ -105,7 +101,7 @@
     <string name="no_usage_stats_button_description">Nein, ohne diese Funktion fortfahren</string>
     <string name="activate_usage_stats">App Statistiken (de)aktivieren</string>
     <string name="open_settings">Einstellungen öffnen</string>
-    <string name="usage_stats_explanation">Um die Nutzungszeiten (= Zeit im Vordergrund) deiner Apps zu sehen, benötigt FoxIT eine spezielle Berechtigung. Dieser Button führt direkt zur entsprechenden Einstellung zum (de)aktivieren.</string>
+    <string name="usage_stats_explanation">Um die Nutzungszeiten (= Zeit im Vordergrund) deiner Apps zu sehen, benötigt PRI eine spezielle Berechtigung. Dieser Button führt direkt zur entsprechenden Einstellung zum (de)aktivieren.</string>
     <string name="switch_notifications">Benachrichtigungen (de)aktivieren</string>
     <string name="on">an</string>
     <string name="off">aus</string>

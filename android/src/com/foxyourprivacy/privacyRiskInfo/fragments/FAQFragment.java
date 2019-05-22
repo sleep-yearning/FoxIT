@@ -33,10 +33,8 @@ public class FAQFragment extends ListFragment implements AdapterView.OnItemClick
         View itemView = getActivity().getLayoutInflater().inflate(R.layout.fragment_faq, container, false);
         questionArray = new String[]{
                 getString(R.string.faqq1) + getString(R.string.faqa1),
-                getString(R.string.faqq2) + getString(R.string.faqa2),
                 getString(R.string.faqq3) + getString(R.string.faqa3),
                 getString(R.string.faqq4) + getString(R.string.faqa4),
-                getString(R.string.faqq5) + getString(R.string.faqa5),
                 getString(R.string.faqq6) + getString(R.string.faqa6),
                 getString(R.string.faqq7) + getString(R.string.faqa7),
                 getString(R.string.faqq8) + getString(R.string.faqa8),

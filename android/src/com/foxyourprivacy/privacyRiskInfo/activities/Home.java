@@ -74,7 +74,7 @@ public class Home extends FoxITActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.toolbar_activities, menu);
         menu.findItem(R.id.settings).setVisible(true);
-        menu.findItem(R.id.settings).setIcon(R.drawable.smartphone);
+        menu.findItem(R.id.settings).setIcon(R.drawable.account);
         menu.findItem(R.id.action_options).setVisible(false);
         return true;
     }

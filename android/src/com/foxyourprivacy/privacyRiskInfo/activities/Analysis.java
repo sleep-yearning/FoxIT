@@ -319,10 +319,7 @@ public class Analysis extends FoxITActivity {
             @Override
             public void run() {
                 log.append("\nLISTEN AUFSCHREIBEN...\n");
-                log.append("EICHELN SAMMELN...\n");
                 log.append("LEKTIONEN LERNEN...\n");
-                log.append("FUCHS EINLAUFEN...\n");
-                log.append("TROPHÄEN POLIEREN...\n");
                 log.append("PILZE VERTEILEN...\n");
             }
         });
