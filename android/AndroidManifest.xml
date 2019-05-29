@@ -4,8 +4,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
-
 
 
     <application
@@ -17,28 +15,6 @@
         android:minSdkVersion="17"
         android:supportsRtl="true">
 
-        <activity
-            android:name="com.foxyourprivacy.privacyRiskInfo.activities.Home"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeWhite">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.foxyourprivacy.privacyRiskInfo.activities.Analysis"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.foxyourprivacy.privacyRiskInfo.activities.Home"
-            android:theme="@style/AppThemeWhite" />
-        <activity
-            android:name="com.foxyourprivacy.privacyRiskInfo.activities.AnalysisResults"
-            android:label="Analyse-Ergebnisse"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.foxyourprivacy.privacyRiskInfo.activities.Home"
-            android:theme="@style/AppThemeWhite" />
         <activity
             android:name="com.foxyourprivacy.privacyRiskInfo.activities.LessonActivity"
             android:noHistory="true"
@@ -52,18 +28,17 @@
             android:theme="@style/AppThemeWhite" />
         <activity
             android:name="com.foxyourprivacy.privacyRiskInfo.activities.ClassListActivity"
-            android:label="Die Kurse"
-            android:parentActivityName="com.foxyourprivacy.privacyRiskInfo.activities.Home"
+            android:label="Privacy Risk Info"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeWhite" />
-        <activity
-            android:name="com.foxyourprivacy.privacyRiskInfo.activities.OnboardingActivity"
-            android:label="Willkommen zu FoxIT!"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoBackground" />
+            android:theme="@style/AppThemeWhite">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.foxyourprivacy.privacyRiskInfo.activities.SettingsActivity"
-            android:parentActivityName="com.foxyourprivacy.privacyRiskInfo.activities.Home"
+            android:parentActivityName="com.foxyourprivacy.privacyRiskInfo.activities.ClassListActivity"
             android:label="Einstellungen"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoBackground" />

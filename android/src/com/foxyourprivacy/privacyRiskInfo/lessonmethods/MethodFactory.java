@@ -38,11 +38,6 @@ public class MethodFactory {
                 methodClass.setActivity(activity);
                 return methodClass;
             }
-            case "changeTokenCount": {
-                methodClass = new MethodChangeTokenCount();
-                methodClass.setActivity(activity);
-                return methodClass;
-            }
             case "webSwitch": {
                 methodClass = new MethodWebSwitch();
                 methodClass.setActivity(activity);

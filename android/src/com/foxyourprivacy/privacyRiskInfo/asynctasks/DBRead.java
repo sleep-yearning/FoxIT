@@ -30,10 +30,6 @@ class DBRead extends AsyncTask<Object, Void, Object> {
             result = dbHandler.getNumberOfSolvedLessons((String) objects[2]);
         } else if ("getLessonsFromDB".equals(objects[1])) {
             result = dbHandler.getLessonsFromDB((String) objects[2]);
-        } else if ("getPermissionDescription".equals(objects[1])) {
-            result = dbHandler.getPermissionDescription((String) objects[2]);
-        } else if ("getSettingsFromDB".equals(objects[1])) {
-            result = dbHandler.getSettingsFromDB();
         } else if ("getIndividualData".equals(objects[1])) {
             result = dbHandler.getIndividualData();
         } else if ("getIndividualValue".equals(objects[1])) {

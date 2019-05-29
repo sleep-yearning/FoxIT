@@ -136,7 +136,7 @@ public class SettingsActivity extends FoxITActivity {
 
     }
 
-    public void updateLessions(Context context, ConnectivityManager connMan) {
+    public void updateLessons(Context context, ConnectivityManager connMan) {
         //checking connectivity to a network
         NetworkInfo netInfo = connMan.getActiveNetworkInfo();
         if (netInfo != null && netInfo.isConnected()) {

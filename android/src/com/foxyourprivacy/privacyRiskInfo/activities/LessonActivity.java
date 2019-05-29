@@ -20,8 +20,6 @@ import com.foxyourprivacy.privacyRiskInfo.DBHandler;
 import com.foxyourprivacy.privacyRiskInfo.LessonObject;
 import com.foxyourprivacy.privacyRiskInfo.R;
 import com.foxyourprivacy.privacyRiskInfo.ValueKeeper;
-import com.foxyourprivacy.privacyRiskInfo.lessonmethods.Method;
-import com.foxyourprivacy.privacyRiskInfo.lessonmethods.MethodFactory;
 import com.foxyourprivacy.privacyRiskInfo.slides.CertSlide;
 import com.foxyourprivacy.privacyRiskInfo.slides.EvaluationSlide;
 import com.foxyourprivacy.privacyRiskInfo.slides.GenQuizSlide;
@@ -369,47 +367,12 @@ public class LessonActivity extends FoxITActivity {
         layout.setEnabled(true);
 
         ValueKeeper v = ValueKeeper.getInstance();
-        boolean isEval = false;
-        if (lesson.getLessonName().contains("EVALUATION")) {
-            isEval = true;
-            String switc = lesson.getLessonName().substring(0, lesson.getLessonName().indexOf("EVALUATION"));
-            switch (switc) {
-                //TODO: implement relevant evaluations for production
-                case "timeEval":
-                    v.setEvaluationResults(evaluationResults);
-                    v.increaseCurrentEvaluation();
-                    break;
-                case "appEval":
-
-                    //v.removeFirstFromAppList();
-                    v.setEvaluationResults(evaluationResults);
-                    v.increaseCurrentEvaluation();
-                    break;
-                default:
-                    isEval = false;
-            }
-
-
-        }
-        if (lesson.slidearray[currentSlide].isLessonSolved() && (lesson.getProcessingStatus() != 3 && !isEval)) {
+        if (lesson.slidearray[currentSlide].isLessonSolved() && (lesson.getProcessingStatus() != 3)) {
             DBHandler db = new DBHandler(this);
 
             if (lesson.getProcessingStatus() != -99) {
                 db.changeLessonToSolved(lesson.getLessonName());
             }
-
-            MethodFactory factory = new MethodFactory(this);
-            if (className != null && !className.equals("nothing") && !className.equals("Daily Lessons")) {
-                Method method = factory.createMethod("changeTokenCount");
-                method.callClassMethod("1");
-            }
-
-            //raise the acornCount on success
-            Method method2 = factory.createMethod("changeAcornCount");
-            method2.callClassMethod(Integer.toString(lesson.getReward()));
-            db.close();
-
-
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {

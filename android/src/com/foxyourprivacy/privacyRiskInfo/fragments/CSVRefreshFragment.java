@@ -37,7 +37,7 @@ public class CSVRefreshFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 refreshClassButton.setBackgroundColor(Color.GREEN);
-                ((SettingsActivity) getActivity()).updateLessions(getActivity(), (ConnectivityManager) getActivity().getSystemService(android.app.Activity.CONNECTIVITY_SERVICE));
+                ((SettingsActivity) getActivity()).updateLessons(getActivity(), (ConnectivityManager) getActivity().getSystemService(android.app.Activity.CONNECTIVITY_SERVICE));
                 /*
                 DBHandler dbHandler = new DBHandler(getActivity(),null,null,1);
                 dbHandler.updateLessons(((SettingsActivity)getActivity()).readCSV(R.raw.lektionen,getActivity()));

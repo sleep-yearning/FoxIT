@@ -26,7 +26,6 @@ public class LessonObject implements Parcelable {
     private final String type;//Lesson-type
     private final int delaytime; //how much time has to pass if the lesson is blocked until it is unlocked again
     private final long nextfreetime; //the lesson is blocked to this point in time
-    private final int reward; //the amount of acorn gained by solving this lesson
     private final String slides; //the slides stored as one large String
     //Hashmap that stores every slide already generated
     public Slide[] slidearray;
@@ -41,7 +40,7 @@ public class LessonObject implements Parcelable {
     /**
      * @author Tim
      */
-    public LessonObject(String name, String slides, String type, int delay, long freetime, int status, int acorn, int position) {
+    public LessonObject(String name, String slides, String type, int delay, long freetime, int status, int position) {
         //filling the lessonInfoHashMap by spliting the lessonDescriptionString
 
         this.slides = slides;
@@ -50,7 +49,6 @@ public class LessonObject implements Parcelable {
         this.type = type;
         delaytime = delay;    //how much time has to pass if the lesson is blocked until it is unlocked again
         nextfreetime = freetime; //the lesson is blocked to this point in time
-        reward = acorn;   //the amount of acorn gained by solving this lesson
         this.position = position;
 
     }
@@ -61,7 +59,6 @@ public class LessonObject implements Parcelable {
         slides = in.readString();
         delaytime = in.readInt();
         position = in.readInt();
-        reward = in.readInt();
         processingStatus = in.readInt();
         nextfreetime = in.readLong();
     }
@@ -111,10 +108,6 @@ public class LessonObject implements Parcelable {
         return nextfreetime;
     }
 
-    public int getReward() {
-        return reward;
-    }
-
     public String getSlides() {
         return slides;
     }
@@ -131,7 +124,6 @@ public class LessonObject implements Parcelable {
         parcel.writeString(slides);
         parcel.writeInt(delaytime);
         parcel.writeInt(position);
-        parcel.writeInt(reward);
         parcel.writeInt(processingStatus);
         parcel.writeLong(nextfreetime);
     }

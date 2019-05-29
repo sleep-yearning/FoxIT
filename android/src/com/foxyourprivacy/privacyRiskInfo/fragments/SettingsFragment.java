@@ -5,7 +5,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -20,10 +19,7 @@ import com.foxyourprivacy.privacyRiskInfo.BuildConfig;
 import com.foxyourprivacy.privacyRiskInfo.R;
 import com.foxyourprivacy.privacyRiskInfo.ValueKeeper;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * This Fragment is the first one that is shown in settings.
@@ -45,40 +41,22 @@ public class SettingsFragment extends ListFragment implements AdapterView.OnItem
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             profileListItems = new String[]{
-                    getString(R.string.help),
-                    getString(R.string.textsize),
-                    getString(R.string.activate_usage_stats),
-                    getString(R.string.Impressum),
-                    getString(R.string.debugging),
-            };
-            fragmentList.put(getString(R.string.activate_usage_stats), new UsageStatsLinkFragment());
-        } else {
-            profileListItems = new String[]{
-                    getString(R.string.help),
                     getString(R.string.textsize),
                     getString(R.string.Impressum),
                     getString(R.string.debugging),
             };
-        }
 
 
-        fragmentList.put(getString(R.string.personalData), new ProfileFragment());
         fragmentList.put(getString(R.string.textsize), new SelectFragment());
-        fragmentList.put(getString(R.string.help), new FAQFragment());
         fragmentList.put(getString(R.string.Impressum), new LegalInformationFragment());
         fragmentList.put(getString(R.string.debugging), new CSVRefreshFragment());
 
 
         context = getActivity().getApplicationContext();
-        List<String> profileList = new ArrayList<>(Arrays.asList(profileListItems));
-
 
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         ValueKeeper v = ValueKeeper.getInstance();
-        TextView vpnCode = view.findViewById(R.id.textViewVPNCODE);
-        vpnCode.setText(v.getUsername());
         int versionCodeInt = BuildConfig.VERSION_CODE;
         String versionName = BuildConfig.VERSION_NAME;
         TextView versionCode = view.findViewById(R.id.textViewVersion);
@@ -90,19 +68,6 @@ public class SettingsFragment extends ListFragment implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        String theAnalysisEntry = getString(R.string.reAnalyse);
-        if (profileListItems[position].equals(theAnalysisEntry)) {
-            //add the TradeRequestFragment to the activity's context
-            FragmentManager manager = getFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            //AnalysisRequestFragment tradeRequest = new AnalysisRequestFragment();
-            AnalysisRequestFragment analysisRequest = new AnalysisRequestFragment();
-            //add the fragment to the count_frame RelativeLayout
-            transaction.add(R.id.request_frame, analysisRequest, "count");
-            transaction.addToBackStack("analysisRequest");
-            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            transaction.commit();
-        } else {
             Fragment newPage = fragmentList.get(profileListItems[position]);
             if (newPage != null) {
 
@@ -117,7 +82,7 @@ public class SettingsFragment extends ListFragment implements AdapterView.OnItem
                 RelativeLayout firstFragment = getActivity().findViewById(R.id.first_fragment_frame);
                 firstFragment.setVisibility(View.GONE);
             }
-        }
+
 
     }
 
@@ -136,18 +101,6 @@ public class SettingsFragment extends ListFragment implements AdapterView.OnItem
         getListView().setOnItemClickListener(this);
 
     }
-
-//    /**
-//     * Enables to pass arguments to the fragment
-//     * @author Tim
-//     * <p>
-//     */
-//     @Override
-//     public void setArguments(Bundle arg){
-//         onboardingText=arg.getString("onboardingText");
-//         icon=arg.getInt("icon");
-//     }
-
 
 
     /**

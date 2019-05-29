@@ -1,6 +1,5 @@
 package com.foxyourprivacy.privacyRiskInfo.asynctasks;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -24,16 +23,11 @@ public class DBWrite extends AsyncTask<Object, Void, Void> {
     protected Void doInBackground(Object... objects) {
         Context context = (Context) objects[0];
         DBHandler dbHandler = new DBHandler(context);
-        if (objects[1] == "addParamColumn") {
-            dbHandler.addParamColumn((ContentValues[]) objects[2]);
-        } else if (objects[1] == "addAppColumn") {
-            dbHandler.addAppColumn((ContentValues[]) objects[2]);
-        } else if (objects[1] == "updateLessons") {
+
+        if (objects[1] == "updateLessons") {
             dbHandler.updateLessons((ArrayList<String[]>) objects[2]);
         } else if (objects[1] == "updateClasses") {
             dbHandler.updateClasses((ArrayList<String[]>) objects[2]);
-        } else if (objects[1] == "updatePermissions") {
-            dbHandler.updatePermissions((ArrayList<String[]>) objects[2]);
         } else if (objects[1] == "changeLessonToRead") {
             dbHandler.changeLessonToRead((String) objects[2], (String) objects[3]);
         } else if (objects[1] == "changeLessonToSolved") {
@@ -42,8 +36,6 @@ public class DBWrite extends AsyncTask<Object, Void, Void> {
             dbHandler.changeLessonToUnlocked((String) objects[2]);
         } else if (objects[1] == "setLessonNextFreeTime") {
             dbHandler.setLessonNextFreeTime((String) objects[2], (String) objects[3], (long) objects[4]);
-        } else if (objects[1] == "updateSettingDescriptions") {
-            dbHandler.updateSettingDescriptions((ArrayList<String[]>) objects[2]);
         } else if (objects[1] == "insertIndividualData") {
             dbHandler.insertIndividualData((HashMap<String, String>) objects[2]);
         } else if (objects[1] == "changeIndividualValue") {
@@ -51,10 +43,7 @@ public class DBWrite extends AsyncTask<Object, Void, Void> {
         } else if (objects[1] == "insertIndividualValue") {
             dbHandler.insertIndividualValue((String) objects[2], (String) objects[3]);
         } else if (objects[1] == "clearAndSetValueKeeper") {
-            dbHandler.clearAppsFromVK();
             dbHandler.insertIndividualData((HashMap<String, String>) objects[2]);
-        } else if (objects[1] == "clearAppsFromVK") {
-            dbHandler.clearAppsFromVK();
         }
 
         dbHandler.close();

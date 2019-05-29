@@ -1,7 +1,5 @@
 package com.foxyourprivacy.privacyRiskInfo.activities;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -27,7 +25,6 @@ import com.foxyourprivacy.privacyRiskInfo.LessonObject;
 import com.foxyourprivacy.privacyRiskInfo.R;
 import com.foxyourprivacy.privacyRiskInfo.ValueKeeper;
 import com.foxyourprivacy.privacyRiskInfo.asynctasks.DBWrite;
-import com.foxyourprivacy.privacyRiskInfo.fragments.TradeRequestFragment_lesson;
 
 import java.util.ArrayList;
 
@@ -158,31 +155,15 @@ public class LessonListActivity extends FoxITActivity implements AdapterView.OnI
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        if (lessonObjectList.get(position).getProcessingStatus() == 0) {
-
-            Bundle tradeInfos = new Bundle();
-            tradeInfos.putString("target", lessonObjectList.get(position).getLessonName());
-
-            //add the acornCountFragment to the activity's context
-            FragmentManager manager = getFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            TradeRequestFragment_lesson tradeRequest = new TradeRequestFragment_lesson();
-            tradeRequest.setArguments(tradeInfos);
-            //add the fragment to the count_frame RelativeLayout
-            transaction.add(R.id.count_frame, tradeRequest, "count");
-            transaction.addToBackStack("lessonTradeRequest");
-            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            transaction.commit();
 
 
-        } else {
             if (lessonObjectList.get(position).getNextfreetime() > (System.currentTimeMillis())) {
 
                 //display the animation description
                 //Log.d("nextfreetime: ", lessonObjectList.get(position).getNextfreetime() + " ");
                 //Log.d("currenttime :", System.currentTimeMillis() + " ");
                 Toast.makeText(getApplicationContext(),
-                        "Diese Lektion ist erst wieder in " + Long.toString((lessonObjectList.get(position).getNextfreetime() - System.currentTimeMillis()) / 60000) + " Minuten verfügbar.", Toast.LENGTH_LONG).show();
+                        "Diese Lektion ist erst wieder in " + (lessonObjectList.get(position).getNextfreetime() - System.currentTimeMillis()) / 60000 + " Minuten verfügbar.", Toast.LENGTH_LONG).show();
 
 
             } else {
@@ -197,7 +178,6 @@ public class LessonListActivity extends FoxITActivity implements AdapterView.OnI
                 intent.putExtra("classname", className);
                 startActivity(intent);
             }
-        }
 
 
     }
@@ -227,9 +207,6 @@ public class LessonListActivity extends FoxITActivity implements AdapterView.OnI
         }
 
         ValueKeeper v = ValueKeeper.getInstance();
-        if (solvedLessonNumber == lessonNumber && lessonNumber != 0) {
-            v.insertSolvedClass(className);
-        }
 
 
         TextView solved = findViewById(R.id.text_percentage_solved);

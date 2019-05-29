@@ -1,11 +1,13 @@
 package com.foxyourprivacy.privacyRiskInfo.activities;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import com.foxyourprivacy.privacyRiskInfo.ClassObject;
 import com.foxyourprivacy.privacyRiskInfo.DBHandler;
 import com.foxyourprivacy.privacyRiskInfo.R;
+import com.foxyourprivacy.privacyRiskInfo.ValueKeeper;
 
 import java.util.ArrayList;
 
@@ -43,14 +46,12 @@ public class ClassListActivity extends FoxITActivity implements AdapterView.OnIt
         // sets our toolbar as the actionbar
         Toolbar toolbar = findViewById(R.id.foxit_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         DBHandler dbHandler = new DBHandler(this);
 
         //classObjectList.add(test);
         classObjectList = dbHandler.getClasses();
+        //Log.d("classes",classObjectList.toString());
 
         //sort Erstes Tapsen and Daily Lessons on the first 2 slots
         ArrayList<ClassObject> sortedList = new ArrayList<>();
@@ -112,7 +113,8 @@ public class ClassListActivity extends FoxITActivity implements AdapterView.OnIt
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.toolbar_activities, menu);
         menu.findItem(R.id.action_options).setVisible(false);
-        menu.findItem(R.id.settings).setVisible(false);
+        menu.findItem(R.id.settings).setVisible(true);
+        menu.findItem(R.id.settings).setIcon(R.drawable.account);
         return true;
     }
 
@@ -124,8 +126,9 @@ public class ClassListActivity extends FoxITActivity implements AdapterView.OnIt
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == android.R.id.home) {
-            onBackPressed();
+        if (id == R.id.settings) {
+            Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(i);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -265,5 +268,22 @@ public class ClassListActivity extends FoxITActivity implements AdapterView.OnIt
         }
 
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        ValueKeeper v = ValueKeeper.getInstance();
+        Log.d("started?", String.valueOf(v.startedBefore));
+        //DBHandler db=new DBHandler(this,null,null,1);
+        if (!v.startedBefore) {
+            //db.changeIndividualValue("onboardingStartedBefore",Boolean.toString(true));
+            SettingsActivity sa = new SettingsActivity();
+            sa.updateLessons(this, (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE));
+            v.startedBefore = true;
+            Intent mIntent = getIntent();
+            finish();
+            startActivity(mIntent);
+        }
     }
 }
